@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        FirebaseApp.configure()
+        //1
+        //creates an instance for our login.storyboard that has LoginViewController set as its initial view controller
+        let storyboard = UIStoryboard(name: "Login", bundle: .main)
+        
+        //2
+        // check if the storyboard has an initial view controller set
+        if let initialViewController = storyboard.instantiateInitialViewController(){
+            //3
+            //If the storyboard's initial view controller exists, set it to the window's rootViewController property
+            window?.rootViewController = initialViewController
+            //4
+            // Position the window above any other existing windows
+            window?.makeKeyAndVisible()
+        }
+        //
         // Override point for customization after application launch.
         return true
     }
