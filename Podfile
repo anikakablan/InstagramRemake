@@ -9,6 +9,7 @@ target 'Makestagram' do
   pod 'FirebaseUI/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'Kingfisher', '~> 3.0'
   
   # Pods for Makestagram
 
@@ -21,5 +22,6 @@ target 'Makestagram' do
     inherit! :search_paths
     # Pods for testing
   end
+  
 
 end

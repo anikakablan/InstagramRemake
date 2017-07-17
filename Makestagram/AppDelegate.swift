@@ -18,22 +18,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        
         //1
         //creates an instance for our login.storyboard that has LoginViewController set as its initial view controller
-        let storyboard = UIStoryboard(name: "Login", bundle: .main)
+//        let storyboard = UIStoryboard(name: "Login", bundle: .main)
         
         //2
         // check if the storyboard has an initial view controller set
-        if let initialViewController = storyboard.instantiateInitialViewController(){
-            //3
-            //If the storyboard's initial view controller exists, set it to the window's rootViewController property
-            window?.rootViewController = initialViewController
-            //4
-            // Position the window above any other existing windows
-            window?.makeKeyAndVisible()
-        }
+//        if let initialViewController = storyboard.instantiateInitialViewController(){
+//            //3
+//            //If the storyboard's initial view controller exists, set it to the window's rootViewController property
+//            window?.rootViewController = initialViewController
+//            //4
+//            // Position the window above any other existing windows
+//            window?.makeKeyAndVisible()
+//        }
         //
         // Override point for customization after application launch.
+        configureInitialRootViewController(for: window)
         return true
     }
 
@@ -105,6 +107,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+}
+    
+extension AppDelegate {
+    func configureInitialRootViewController(for window: UIWindow?){
+        let defaults = UserDefaults.standard
+        let initialViewController: UIViewController
+        
+        if Auth.auth().currentUser != nil,
+            let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
+            let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
+            
+            User.setCurrent(user)
+            
+            initialViewController = UIStoryboard.initialViewController(for: .main)
+        }
+        else{
+            
+            initialViewController = UIStoryboard.initialViewController(for: .login)
+        }
+        
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
+    }
 }
 
