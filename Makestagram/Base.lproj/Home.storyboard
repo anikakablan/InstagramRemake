@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Makestagram-->
+        <!--Biogram-->
         <scene sceneID="P5X-ZB-ka3">
             <objects>
                 <viewController id="Je8-WF-nQW" customClass="HomeViewController" customModule="Makestagram" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VU5-FG-1dC">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="17" width="414" height="740"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostHeaderCell" rowHeight="54" id="HAo-Md-svF" customClass="PostHeaderCell" customModule="Makestagram" customModuleProvider="target">
@@ -56,15 +56,15 @@
                                             <outlet property="usernameLabel" destination="286-PD-LFD" id="Isu-9H-E7W"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostImageCell" rowHeight="375" id="gaD-AE-C5b" customClass="PostImageCell" customModule="Makestagram" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55" width="414" height="375"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostImageCell" rowHeight="355" id="gaD-AE-C5b" customClass="PostImageCell" customModule="Makestagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55" width="414" height="355"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gaD-AE-C5b" id="Ym3-IS-uvr">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="374"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="354"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQK-H7-8Zq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="375"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="355"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -73,11 +73,11 @@
                                             <outlet property="postImageView" destination="SQK-H7-8Zq" id="pAZ-sh-keu"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostActionCell" rowHeight="46" id="bGh-RW-qml" customClass="PostActionCell" customModule="Makestagram" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="430" width="414" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostActionCell" rowHeight="91" id="bGh-RW-qml" customClass="PostActionCell" customModule="Makestagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="410" width="414" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bGh-RW-qml" id="QW9-O3-XH6" customClass="PostActionCell" customModule="Makestagram" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="45"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mD4-xU-Dxo">
@@ -127,11 +127,11 @@
                         <constraints>
                             <constraint firstItem="VU5-FG-1dC" firstAttribute="leading" secondItem="fhv-oh-yq7" secondAttribute="leading" id="Qim-lA-P6Q"/>
                             <constraint firstAttribute="trailing" secondItem="VU5-FG-1dC" secondAttribute="trailing" id="db5-KJ-S8r"/>
-                            <constraint firstItem="VU5-FG-1dC" firstAttribute="top" secondItem="2y0-Gp-6dN" secondAttribute="bottom" id="erd-np-ljP"/>
-                            <constraint firstItem="6W8-XS-Fuq" firstAttribute="top" secondItem="VU5-FG-1dC" secondAttribute="bottom" id="tb1-eD-tvb"/>
+                            <constraint firstItem="VU5-FG-1dC" firstAttribute="top" secondItem="2y0-Gp-6dN" secondAttribute="bottom" constant="-47" id="erd-np-ljP"/>
+                            <constraint firstItem="6W8-XS-Fuq" firstAttribute="top" secondItem="VU5-FG-1dC" secondAttribute="bottom" constant="-70" id="tb1-eD-tvb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Makestagram" id="06w-Gy-Ott"/>
+                    <navigationItem key="navigationItem" title="Biogram" id="06w-Gy-Ott"/>
                     <connections>
                         <outlet property="tableView" destination="VU5-FG-1dC" id="3OX-mA-5lT"/>
                     </connections>

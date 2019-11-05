@@ -18,12 +18,11 @@ class MGPhotoHelper: NSObject{
     func presentActionSheet(from viewController: UIViewController){
         //1
         //Initialize a new UIAlertController of type actionSheet. UIAlertController can be used to present different types of alerts. An action sheet is a popup that will be displayed at the bottom edge of the screen.
-        let alertController = UIAlertController (title: nil, message: "Where do you wanto to get you picture from?", preferredStyle: .actionSheet)
+        let alertController = UIAlertController (title: nil, message: "Where do you want to get your picture from?", preferredStyle: .actionSheet)
         //2
         //Check if the current device has a camera available. The simulator doesn't have a camera and won't execute the if clause.
         if UIImagePickerController.isSourceTypeAvailable(.camera){
          
-                self.presentImagePickerController(with: .camera, from: viewController)
         
             //3
             //Create a new UIAlertAction. Each UIAlertAction represents an action on the UIAlertController. As part of the UIAlertAction initializer, you can provide a title, style, and handler that will execute when the action is selected.
