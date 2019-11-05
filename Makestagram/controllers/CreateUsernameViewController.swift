@@ -27,8 +27,8 @@ class CreateUsernameViewController: UIViewController {
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         //1
-        //First you guard to check that a FIRUser is logged in and that the user has
-        //provided a username in the text field
+        //First you guard to check that a FIRUser is logged in and that the user has provided a username in the text field
+        
         guard let firUser = Auth.auth().currentUser,
         let username = usernameTextField.text,
             !username.isEmpty else { return }
@@ -62,10 +62,12 @@ class CreateUsernameViewController: UIViewController {
                 assertionFailure(error.localizedDescription)
                 return
             }
+            
          //5
             //we read the user we just wrote tot the database and creat a user from the snapshot
             ref.observeSingleEvent(of: .value, with: { (snapshot) in
                 let user = User(snapshot: snapshot)
+                
                 //handle newly created user here
         
     })
